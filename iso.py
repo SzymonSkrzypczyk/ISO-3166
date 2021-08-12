@@ -1,6 +1,6 @@
 import csv
 from typing import List
-# from pathlib import Path
+from pathlib import Path
 from dataclasses import dataclass, field
 
 
@@ -32,7 +32,7 @@ class Iso:
     @staticmethod
     def _load() -> List[Code]:
         content = []
-        with open('iso-3166_basic\\iso.csv', mode='r', encoding='utf-8') as csv_file:
+        with (Path(__file__).parent / 'iso.csv').open(mode='r', encoding='utf-8') as csv_file:
             csv_reader = csv.DictReader(csv_file)
             line_count = 0
             for row in csv_reader:
