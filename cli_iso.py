@@ -1,3 +1,4 @@
+"""CLI interface of the iso module"""
 import click
 from iso import Iso
 
